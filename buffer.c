@@ -1,14 +1,23 @@
+/* buffer implementation */
 #include <stdio.h>
 #include <string.h>
 
-/* buffer implementation */
-
+//constants and static variables
 #define SIZE 5
 int pushIndex, popIndex;
 int num = 1;
 int buffer[SIZE];
+
+//function prototypes
 void push();
 void pop();
+int next();
+
+int next()
+{
+	if (pushIndex < SIZE-1) return pushIndex+1;
+	else return 0;
+}
 
 void printState()
 {
