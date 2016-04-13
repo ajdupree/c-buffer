@@ -22,6 +22,7 @@ int next()
 void printState()
 {
 	printf("Buffer state: [%d, %d, %d, %d, %d]\n", buffer[0], buffer[1], buffer[2], buffer[3], buffer[4]);
+	printf("pushIndex: %d, popIndex: %d\n", pushIndex, popIndex);
 }
 
 void push()
