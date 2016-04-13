@@ -5,9 +5,15 @@
 
 #define SIZE 5
 int pushIndex, popIndex;
-char buffer[5];
+int num = 1;
+int buffer[SIZE];
 void push();
 void pop();
+
+void printState()
+{
+	printf("Buffer state: [%d, %d, %d, %d, %d]\n", buffer[0], buffer[1], buffer[2], buffer[3], buffer[4]);
+}
 
 void push()
 {
@@ -67,6 +73,8 @@ void main(){
 		{
 			pop();
 		}
+
+		printState();
 
 }
 
