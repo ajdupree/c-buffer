@@ -26,7 +26,21 @@ void printState()
 
 void push()
 {
+	buffer[pushIndex] = num;
+	num++;
 
+	//decide to increment the popIndex or not
+	if(pushIndex == popIndex && buffer[next()] != '\0')
+	{
+		popIndex++;
+	}
+
+	//always increment push index
+	pushIndex++;
+
+	//reset indices if necessary
+	if(pushIndex == SIZE) pushIndex = 0;
+	if(popIndex == SIZE) popIndex = 0;
 }
 
 void pop()
