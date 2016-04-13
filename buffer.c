@@ -6,7 +6,7 @@
 #define SIZE 5
 int pushIndex, popIndex;
 int num = 1;
-int buffer[SIZE];
+int buffer[SIZE] = {0,0,0,0,0};
 
 //function prototypes
 void push();
@@ -30,7 +30,7 @@ void push()
 	num++;
 
 	//decide to increment the popIndex or not
-	if(pushIndex == popIndex && buffer[next()] != '\0')
+	if(pushIndex == popIndex && buffer[next()] != 0)
 	{
 		popIndex++;
 	}
