@@ -46,6 +46,18 @@ void push()
 
 void pop()
 {
+	if (buffer[popIndex] == 0)
+	{
+		printf("Buffer empty.\n");
+		return;
+	}
+	else
+	{
+		printf("Popped: %d\n", buffer[popIndex]);
+		buffer[popIndex]=0;
+		popIndex++;
+		if(popIndex == SIZE) popIndex=0;
+	}
 
 }
 
@@ -60,7 +72,7 @@ void main(){
 		int last = SIZE-1;
 
 		//get data from stdin
-		printf("Please enter 'push' or 'pop'.\n");
+		printf("\nPlease enter 'push' or 'pop'.\n");
 		fgets(input, SIZE, stdin);
 		printf("You said: %s \n", input);
 
